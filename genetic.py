@@ -7,12 +7,12 @@ from typing import List
 ##Parametros
 lengthPopulation: int = 100
 minValuePopulation: int = 1
-maxValuePopulation: int = 100
+maxValuePopulation: int = 20
 goal: int = 15
 
 rateMutation: float = 0.05
-lowerMutation: int = 10
-upperMutation: int = 90
+lowerMutation: int = 5
+upperMutation: int = 15
 
 ## Classe do genoma
 class Genome:
@@ -143,7 +143,7 @@ def termination_condition(population_actual: List[Genome], generation_actual: in
         if best_individual.fitness <= before_best_genome.fitness:
             diff_generation = generation_actual - before_best_genome.generation
             if diff_generation >= 10:
-                print("Maximum of generations without progress")
+                print(f"Maximum of generations without progress, generation actual ${generation_actual}")
                 return True
         else :
             before_best_genome = best_individual
