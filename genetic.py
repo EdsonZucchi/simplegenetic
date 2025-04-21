@@ -24,7 +24,7 @@ class Genome:
         self.generation: int = generation
 
     def add_fitness(self, fitness):
-        self.fitness += fitness
+        self.fitness = fitness
 
     def clear_fitness(self):
         self.fitness: float = 0.0
